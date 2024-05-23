@@ -110,3 +110,14 @@ After the build finishes, in the Cloud console, goto Artifact Registry > Reposit
 6. Under ```Build configuration```, select ```Cloud Build configuration file```.
 7. In the ```Cloud Build configuration file location``` field, type ```cloudbuild.yaml``` after the /.
 8. Click ```Create```.
+
+Now we need to Push the application code to Cloud Source Repositories to trigger the CI Pipeline in Cloud Build.
+```
+cd ~/hello-cloudbuild-app
+git add .
+git commit -m "Msg-1"
+git push google master
+```
+In Cloud Console, Goto ```Cloud Build > Dashboard```.(To view the newly build.)
+
+### Task-5: Create the Test Environment and CD Pipeline
