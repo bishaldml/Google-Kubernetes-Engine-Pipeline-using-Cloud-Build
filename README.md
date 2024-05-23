@@ -81,3 +81,30 @@ PROJECT_ID=$(gcloud config get-value project)
 ```
 git remote add google "https://source.developers.google.com/p/${PROJECT_ID}/r/hello-cloudbuild-app"
 ```
+### Task-3: Create a container image with Cloud Build.
+```
+cd ~/hello-cloudbuild-app
+```
+```
+cat Dockerfile
+```
+```
+COMMIT_ID="$(git rev-parse --short=7 HEAD)"
+```
+```
+gcloud builds submit --tag="${REGION}-docker.pkg.dev/${PROJECT_ID}/my-repository/hello-cloudbuild:${COMMIT_ID}" .
+```
+After the build finishes, in the Cloud console, goto Artifact Registry > Repositories to verify that your new container image is indeed available in Artifact Registry.
+
+### Task-4: Create the CI Pipeline
+1. In this task, we will configure Cloud Build to automatically run a small unit test, build container image, and then push it to Artifact Registry.
+2. Pushing a new commit to cloud Source Repositories triggers this pipeline automatically.
+3. The 'cloudbuild.yaml' file is the pipeline configuration.
+
+1. In Cloud Console, Goto ```Cloud Build > Triggers```.
+2. Click ```Create Trigger```
+3. In ```Name field```, type ```hello-cloudbuild```
+4. Under ```Event```, select ```Push to a branch```.
+5. Under ```Source```, select ```hello-cloudbuild-app``` as your ```Repository``` and ```.* (any branch)``` as your ```Branch```.
+6. Under ```Build configuration```, select ```Cloud Build configuration file```.
+7. In the ```Cloud Build configuration file location``` field, type ```cloudbuild.yaml``` after the /.
