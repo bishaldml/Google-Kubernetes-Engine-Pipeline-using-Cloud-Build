@@ -97,10 +97,11 @@ gcloud builds submit --tag="${REGION}-docker.pkg.dev/${PROJECT_ID}/my-repository
 After the build finishes, in the Cloud console, goto Artifact Registry > Repositories to verify that your new container image is indeed available in Artifact Registry.
 
 ### Task-4: Create the CI Pipeline
+```
 1. In this task, we will configure Cloud Build to automatically run a small unit test, build container image, and then push it to Artifact Registry.
 2. Pushing a new commit to cloud Source Repositories triggers this pipeline automatically.
 3. The 'cloudbuild.yaml' file is the pipeline configuration.
-
+```
 1. In Cloud Console, Goto ```Cloud Build > Triggers```.
 2. Click ```Create Trigger```
 3. In ```Name field```, type ```hello-cloudbuild```
