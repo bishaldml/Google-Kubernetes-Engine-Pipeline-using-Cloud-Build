@@ -109,3 +109,4 @@ After the build finishes, in the Cloud console, goto Artifact Registry > Reposit
 5. Under ```Source```, select ```hello-cloudbuild-app``` as your ```Repository``` and ```.* (any branch)``` as your ```Branch```.
 6. Under ```Build configuration```, select ```Cloud Build configuration file```.
 7. In the ```Cloud Build configuration file location``` field, type ```cloudbuild.yaml``` after the /.
+8. Click ```Create```.
