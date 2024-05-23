@@ -213,3 +213,10 @@ git add app.py test_app.py
 git commit -m "Hello Cloud Build"
 git push google master
 ```
+### Task-8: Test the rollback
+1. In the Cloud console, go to Cloud Build > Dashboard.
+2. Click on View all link under Build History for the hello-cloudbuild-env repository.
+3. Click on the second most recent build available.
+4. Click Rebuild.
+
+# -------------------END-------------------------
