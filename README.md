@@ -121,3 +121,20 @@ git push google master
 In Cloud Console, Goto ```Cloud Build > Dashboard```.(To view the newly build.)
 
 ### Task-5: Create the Test Environment and CD Pipeline
+Cloud Build is also used for the continous delivery pipeline.
+
+The pipeline runs each time a commit is pushed to the candidate branch of the hello-cloudbuild-env repository.
+
+The pipeline applies the new version of the manifest to the kubernetes cluster and, if successful, copies the manifest over to the production branch.
+
+1. Grant Cloud Build access to GKE.
+2. Clone hello-cloudbuild-env repository and create the production branch.
+3. Copy the 'cloudbuild-delivery.yaml' file available in the hello-cloudbuild-app repository and commit the change.
+4. Create a candidate branch and push both branches for them to be available in Cloud Source and Repositories:
+5. Grant the Source Repository write IAM role to the cloud Build Service account for the hello-cloudbuild-env repository:
+6. Create the Trigger for the continous delivery pipeline.
+7. Modify the CI Pipeline to trigger the CD Pipeline.
+
+### Task-6: Review Cloud Build Pipeline
+
+### Task-7: Test the complete pipeline
